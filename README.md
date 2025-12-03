@@ -37,22 +37,26 @@ project/
 
 1️⃣ Create Virtual Environment & Install Requirements
 *windows
-	    python -m venv venv
-        venv\Scripts\activate
-        pip install -r requirements.txt
+
+	 python -m venv venv
+     venv\Scripts\activate
+     pip install -r requirements.txt
 
 *Linux/macOS
-        python -m venv venv
-		source venv/bin/activate
-        pip install -r requirements.txt
+
+	 python -m venv venv
+ 	source venv/bin/activate
+ 	pip install -r requirements.txt
 
 2️⃣ Capture Gesture Samples
 	
 Use this script to collect your own gesture dataset such as:
 hello, yes, no, stop, ok, thanks, etc.
 Example: 
+
 	python -m src.capture --label hello --samples 200
 General format:
+
 	python -m src.capture.py --label <label_name> --samples <count>
 
 The more samples you record, the better the model performs.
