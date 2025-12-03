@@ -1,0 +1,6 @@
+python -m src.realtime --no-skeleton
+python -m src.train --epochs 15 --augment-times 1
+
+python -m src.realtime --conf-thresh 0.6 --window 8
+python -m src.evaluate
+python -m src.capture --label hello --samples 200
