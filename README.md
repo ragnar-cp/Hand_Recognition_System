@@ -36,26 +36,24 @@ project/
 🏁 Getting Started
 
 1️⃣ Create Virtual Environment & Install Requirements
-	*windows
-	python -m venv venv
+*windows
+	    python -m venv venv
         venv\Scripts\activate
         pip install -r requirements.txt
 
-	*Linux/macOS
-	python -m venv venv
-        source venv/bin/activate
+*Linux/macOS
+        python -m venv venv
+		source venv/bin/activate
         pip install -r requirements.txt
 
 2️⃣ Capture Gesture Samples
 	
-	Use this script to collect your own gesture dataset such as:
-        hello, yes, no, stop, ok, thanks, etc.
-
-	Example: 
-	python src/capture.py --label hello --samples 200
-	
-	General format:
-	python src/capture.py --label <label_name> --samples <count>
+Use this script to collect your own gesture dataset such as:
+hello, yes, no, stop, ok, thanks, etc.
+Example: 
+	python -m src.capture --label hello --samples 200
+General format:
+	python -m src.capture.py --label <label_name> --samples <count>
 
 The more samples you record, the better the model performs.
 
@@ -67,7 +65,7 @@ data/<label_name>/
 
 After collecting several gestures, train your classifier:
 
-      python src/train.py --epochs 6
+      python -m src.train --epochs 15 --augment-times 1
 
 
 This generates:
@@ -75,11 +73,15 @@ This generates:
 experiments/best_model.h5
 experiments/label_encoder.pkl
 
+## OPTIONAL:-- Check the accuracy of the trained model....
+	python -m src.evaluate
+
+
 4️⃣ Run Realtime Interpreter
 
 To run realtime gesture recognition:
 
-      python src/realtime.py
+      python -m src.realtime --conf-thresh 0.6 --window 8
 
 
 Behavior:
@@ -95,4 +97,4 @@ voice.py uses pyttsx3 to convert predictions into speech.
 
 If installed:
 
-   pip install pyttsx3
+       pip install pyttsx3
