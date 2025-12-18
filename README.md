@@ -102,3 +102,12 @@ voice.py uses pyttsx3 to convert predictions into speech.
 If installed:
 
        pip install pyttsx3
+
+
+
+
+
+
+ new ai feature 
+ 	pip install textblob
+    python -m textblob.download_corpora
